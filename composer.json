@@ -1,0 +1,30 @@
+{
+  "name": "lograt/core",
+  "version": "1.0.0",
+  "description": "Core Bundle For LogRat",
+  "type": "symfony-bundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Chuck Glogowski",
+      "email": "cglogowski@viosys.com"
+    }
+  ],
+  "require": {
+    "php": ">=8.1",
+    "ext-ctype": "*",
+    "ext-iconv": "*",
+    "symfony/console": "6.1.*",
+    "symfony/event-dispatcher": "6.1.*",
+    "symfony/flex": "^2",
+    "symfony/framework-bundle": "6.1.*",
+    "symfony/runtime": "6.1.*"
+  },
+
+  "autoload": {
+    "psr-4": {
+      "LogRat\\Core\\": "src/"
+    }
+  }
+
+}
