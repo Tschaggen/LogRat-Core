@@ -1,6 +1,6 @@
 <?php
 
-namespace LogRat\Core\Events;
+namespace LogRat\Core\Event;
 
 use LogRat\Core\Services\ModuleRegistry;
 use Symfony\Contracts\EventDispatcher\Event;

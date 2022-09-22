@@ -1,6 +1,6 @@
 <?php
 
-namespace LogRat\Core\Services;
+namespace LogRat\Core\Service;
 
 class ModuleRegistry {
 
