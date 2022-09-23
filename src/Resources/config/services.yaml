@@ -1,0 +1,4 @@
+services:
+  LogRat\Core\EventSubscribers\TestSubscriber:
+    tags:
+      - { name: lograt_core.testsubscriber, event: endpoint.register }

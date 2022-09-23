@@ -5,9 +5,9 @@ namespace LogRat\Core\Event;
 use App\Service\ModuleRegistry;
 use Symfony\Contracts\EventDispatcher\Event;
 
-class RegisterEndpointEvent extends Event
+class RegisterModuleEvent extends Event
 {
-    public const NAME = 'endpoint.register';
+    public const NAME = 'module.register';
 
     protected ModuleRegistry $moduleRegistry;
 
