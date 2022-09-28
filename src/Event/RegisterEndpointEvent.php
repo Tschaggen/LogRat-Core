@@ -2,22 +2,22 @@
 
 namespace LogRat\Core\Event;
 
-use App\Service\ModuleRegistry;
+use LogRat\Core\Service\EndpointRegistry;
 use Symfony\Contracts\EventDispatcher\Event;
 
 class RegisterEndpointEvent extends Event
 {
-    public const NAME = 'endpoint.register';
+    public const NAME = 'lograt.core.endpoint.register';
 
-    protected ModuleRegistry $moduleRegistry;
+    protected EndpointRegistry $endpointRegistry;
 
-    public function __construct(ModuleRegistry $moduleRegistry)
+    public function __construct(EndpointRegistry $endpointRegistry)
     {
-        $this->moduleRegistry = $moduleRegistry;
+        $this->endpointRegistry = $endpointRegistry;
     }
 
     public function getModuleRegistry() {
-        return $this->moduleRegistry;
+        return $this->endpointRegistry;
     }
 
 }

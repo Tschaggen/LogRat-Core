@@ -2,12 +2,12 @@
 
 namespace LogRat\Core\Event;
 
-use App\Service\ModuleRegistry;
+use LogRat\Core\Service\ModuleRegistry;
 use Symfony\Contracts\EventDispatcher\Event;
 
 class RegisterModuleEvent extends Event
 {
-    public const NAME = 'module.register';
+    public const NAME = 'lograt.core.module.register';
 
     protected ModuleRegistry $moduleRegistry;
 

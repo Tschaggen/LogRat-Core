@@ -1,4 +1,7 @@
 services:
-  LogRat\Core\EventSubscribers\TestSubscriber:
-    tags:
-      - { name: lograt_core.testsubscriber, event: endpoint.register }
+  LogRat\Core\Service\ModuleRegistry:
+    public: true
+  LogRat\Core\Service\EndpointRegistry:
+    public: true
+  LogRat\Core\Service\UserHandler:
+    public: true
