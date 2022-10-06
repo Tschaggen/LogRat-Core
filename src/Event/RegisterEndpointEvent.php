@@ -16,7 +16,7 @@ class RegisterEndpointEvent extends Event
         $this->endpointRegistry = $endpointRegistry;
     }
 
-    public function getModuleRegistry() {
+    public function getEndpointRegistry() {
         return $this->endpointRegistry;
     }
 

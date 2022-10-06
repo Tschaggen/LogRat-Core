@@ -2,6 +2,8 @@
 
 namespace LogRat\Core\Service;
 
+use LogRat\Core\Enums\DisplayTypes;
+use LogRat\Core\Enums\SecurityLevel;
 use LogRat\Core\Exception\EndpointRegisterException;
 
 class EndpointRegistry
@@ -32,11 +34,21 @@ class EndpointRegistry
 
         $validatedOptions['callback'] = $options['callback'];
 
-        if (array_key_exists('security_level',$options)) {
+        if (array_key_exists('security_level',$options) && $options['security_level'] instanceof SecurityLevel) {
             $validatedOptions['security_level'] = $options['security_level'];
         }
+        elseif (array_key_exists('security_level',$options) && !($options['security_level'] instanceof SecurityLevel)) {
+            $validatedOptions['security_level'] = SecurityLevel::SECURITY_LEVEL_ADMIN;
+        }
         else {
-            $validatedOptions['security_level'] = UserHandler::SECURITY_LEVEL_NONE;
+            $validatedOptions['security_level'] = SecurityLevel::SECURITY_LEVEL_NONE;
+        }
+
+        if (array_key_exists('display_type',$options) && $options['display_type'] instanceof DisplayTypes) {
+            $validatedOptions['display_type'] = $options['display_type'];
+        }
+        else {
+            $validatedOptions['display_type'] = DisplayTypes::UNKNOWN;
         }
 
         if (array_key_exists($endpoint,$this->apiRegistry->getApiEndpoints($module))) {

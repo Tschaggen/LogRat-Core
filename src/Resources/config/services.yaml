@@ -12,3 +12,5 @@ services:
       - '@ApiRegistry'
   LogRat\Core\Service\UserHandler:
     public: true
+    arguments:
+      - '@ManagerRegistry'
