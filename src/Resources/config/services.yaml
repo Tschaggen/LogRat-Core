@@ -13,4 +13,4 @@ services:
   LogRat\Core\Service\UserHandler:
     public: true
     arguments:
-      - '@ManagerRegistry'
+      - '@doctrine'

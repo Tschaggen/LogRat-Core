@@ -4,9 +4,9 @@ namespace LogRat\Core\Service;
 
 use App\Entity\Apitoken;
 use App\Entity\User;
-use Doctrine\Persistence\ManagerRegistry;
 use LogRat\Core\Enums\SecurityLevel;
 use LogRat\Core\Exception\UserException;
+use Symfony\Bridge\Doctrine\ManagerRegistry;
 
 class UserHandler {
 
@@ -54,7 +54,7 @@ class UserHandler {
 
         $tokens = $this->user->getApitokens();
 
-        if(array_key_exists('apitoken',$_REQUEST)) {
+        if(!array_key_exists('apitoken',$_REQUEST)) {
             return false;
         }
 
