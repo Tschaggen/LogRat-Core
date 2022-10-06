@@ -1,7 +1,14 @@
 services:
+  ApiRegistry:
+    class:  LogRat\Core\Service\ApiRegistry
+    public: false
   LogRat\Core\Service\ModuleRegistry:
     public: true
+    arguments:
+      - '@ApiRegistry'
   LogRat\Core\Service\EndpointRegistry:
     public: true
+    arguments:
+      - '@ApiRegistry'
   LogRat\Core\Service\UserHandler:
     public: true
